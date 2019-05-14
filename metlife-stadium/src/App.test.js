@@ -55,4 +55,28 @@ describe('<App />', () => {
     getByText(/b: 0/i);
     getByText(/s: 0/i);
   });
+
+  it('should reset ball & strike to 0 after clicking ball 4 times', () => {
+    const {getByText} = render(<App />);
+
+    const ballButton = getByText(/ball/i);
+    fireEvent.click(ballButton);
+    fireEvent.click(ballButton);
+    fireEvent.click(ballButton);
+    fireEvent.click(ballButton);
+    getByText(/b: 0/i);
+    getByText(/s: 0/i);
+  });
+
+  it('should reset ball & strike to 0 after clicking strike 3 times', () => {
+    const {getByText} = render(<App />);
+
+    const strikeButton = getByText(/strike/i);
+    fireEvent.click(strikeButton);
+    fireEvent.click(strikeButton);
+    fireEvent.click(strikeButton);
+
+    getByText(/b: 0/i);
+    getByText(/s: 0/i);
+  });
 });
