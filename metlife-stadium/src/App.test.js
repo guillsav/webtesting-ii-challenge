@@ -15,8 +15,8 @@ describe('<App />', () => {
   it('should balls and strikes title', () => {
     const {getByText} = render(<App />);
 
-    getByText(/b:/i);
-    getByText(/s:/i);
+    getByText(/b: 0/i);
+    getByText(/s: 0/i);
   });
 
   it('should render 1 ball', () => {
