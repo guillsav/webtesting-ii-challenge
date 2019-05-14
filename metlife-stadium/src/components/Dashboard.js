@@ -3,10 +3,10 @@ import React from 'react';
 const Dashboard = props => {
   return (
     <div className="Dashboard">
-      <button>Strike</button>
-      <button>Ball</button>
-      <button>Foul</button>
-      <button>Hit</button>
+      <button onClick={props.onBallClick}>Ball</button>
+      <button onClick={props.onStrikeClick}>Strike</button>
+      <button onClick={props.onFoulClick}>Foul</button>
+      <button onClick={props.onHitClick}>Hit</button>
     </div>
   );
 };
