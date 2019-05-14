@@ -79,4 +79,29 @@ describe('<App />', () => {
     getByText(/b: 0/i);
     getByText(/s: 0/i);
   });
+
+  it('should reset strike to 0 after 2 fouls and 1 strike', () => {
+    const {getByText} = render(<App />);
+
+    const strikeButton = getByText(/strike/i);
+    const foulButton = getByText(/foul/i);
+    fireEvent.click(foulButton);
+    fireEvent.click(foulButton);
+
+    fireEvent.click(strikeButton);
+
+    getByText(/s: 0/i);
+  });
+
+  it('should set strike to 2 after 1 fouls and 1 strike', () => {
+    const {getByText} = render(<App />);
+
+    const strikeButton = getByText(/strike/i);
+    const foulButton = getByText(/foul/i);
+    fireEvent.click(foulButton);
+
+    fireEvent.click(strikeButton);
+
+    getByText(/s: 2/i);
+  });
 });
