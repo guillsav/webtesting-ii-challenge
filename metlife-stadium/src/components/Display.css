@@ -1,0 +1,13 @@
+.Display {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  padding: 0 40px;
+  background: steelblue;
+  border: 0;
+  color: #fff;
+  border-radius: 4px 4px 0 0;
+  font-size: 22px;
+  margin-bottom: 0;
+}
