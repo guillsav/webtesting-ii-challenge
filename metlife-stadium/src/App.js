@@ -6,24 +6,21 @@ import Display from './components/Display';
 function App() {
   const [state, setState] = useState({
     ball: 0,
-    strike: 0,
-    hit: 0
+    strike: 0
   });
 
-  let {strike, ball, hit} = state;
+  let {strike, ball} = state;
 
   const onBallClick = () => {
-    if (ball <= 2 && strike <= 2 && hit === 0) {
+    if (ball <= 2 && strike <= 2) {
       setState({
         ball: ball + 1,
-        strike,
-        hit: 0
+        strike
       });
     } else {
       setState({
         ball: 0,
-        strike: 0,
-        hit: 0
+        strike: 0
       });
     }
   };
@@ -32,30 +29,26 @@ function App() {
     if (strike < 2) {
       setState({
         strike: strike + 1,
-        ball,
-        hit: 0
+        ball
       });
     } else {
       setState({
         ball: 0,
-        strike: 0,
-        hit: 0
+        strike: 0
       });
     }
   };
 
   const onFoulClick = () => {
-    if (strike < 2 && ball <= 3 && hit === 0) {
+    if (strike < 2 && ball <= 3) {
       setState({
         strike: strike + 1,
-        ball,
-        hit: 0
+        ball
       });
     } else if (strike === 2) {
       setState({
         strike: 2,
-        ball,
-        hit: 0
+        ball
       });
     }
   };
@@ -63,8 +56,7 @@ function App() {
   const onHitClick = () => {
     setState({
       ball: 0,
-      strike: 0,
-      hit: 0
+      strike: 0
     });
   };
 

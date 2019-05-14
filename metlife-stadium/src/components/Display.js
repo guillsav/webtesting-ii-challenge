@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Display = props => {
-  const {ball, strike} = props.state;
+  const {state = []} = props;
   return (
     <div className="Display">
-      <h2>B: {ball}</h2>
-      <h2>S: {strike}</h2>
+      <h2>B: {state.ball}</h2>
+      <h2>S: {state.strike}</h2>
     </div>
   );
 };
